@@ -14,6 +14,10 @@ export class TaskListComponent {
   @Input() childTaskList: Task[];
   @Output() clickSender = new EventEmitter();
 
+  editButtonHasBeenClicked(taskToEdit: Task) {
+    this.clickSender.emit(taskToEdit);
+  }
+
   priorityColor(currentTask) {
     if (currentTask.priority === 3) {
       return "bg-danger";
