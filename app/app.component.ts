@@ -41,8 +41,4 @@ export class AppComponent {
   editTask(clickedTask) {
     this.selectedTask = clickedTask;
   }
-
-  taskComplete() {
-    this.selectedTask.done = true;
-  }
 }

@@ -17,7 +17,6 @@ import { Task } from './task.model';
       <input type="radio" [(ngModel)]="childSelectedTask.priority" [value]="2">2 (Medium priority)<br>
       <input type="radio" [(ngModel)]="childSelectedTask.priority" [value]="3">3 (High priority)<br>
       <button (click)="doneButtonClicked()">Done editing</button>
-      <button (click)="taskComplete()">Task complete</button>
     </div>
   </div>
   `
@@ -30,8 +29,5 @@ export class EditTaskComponent {
 
   doneButtonClicked() {
     this.doneButtonClickedSender.emit();
-  }
-  taskComplete() {
-    this.taskCompleteSender.emit();
   }
 }
