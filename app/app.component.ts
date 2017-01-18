@@ -11,6 +11,7 @@ import { Task } from './task.model';
     <task-list [childTaskList]="masterTaskList" (clickSender)="editTask($event)"></task-list>
     <hr>
     <edit-task [childSelectedTask]="selectedTask" (doneButtonClickedSender)="finishedEditing()" (taskCompleteSender)="taskComplete()"></edit-task>
+    <new-task (newTaskSender)="addTask($event)"></new-task>
   </div>
   `
 })
@@ -28,6 +29,10 @@ export class AppComponent {
     new Task("Begin brainstorming possible JavaScript group projects", 2),
     new Task("Add README file to last few Angular repos on GitHub", 1)
   ];
+
+  addTask(newTaskFromChild: Task) {
+    this.masterTaskList.push(newTaskFromChild);
+  }
 
   finishedEditing() {
     this.selectedTask = null;
